@@ -10,10 +10,11 @@ public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) throws JsonProcessingException {
+        var javaHome = System.getProperty("java.home");
+        log.info("This program is running using java.home={}", javaHome);
+
         var greeting = new MyMessage("Hello world!");
-
         var json = serialize(greeting);
-
         log.info("Serialized message: {}", json);
     }
 
