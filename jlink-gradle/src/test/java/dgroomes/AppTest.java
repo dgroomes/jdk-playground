@@ -1,15 +1,20 @@
 package dgroomes;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AppTest {
 
-    @Test
-    void message() {
-        var message = new MyMessage("Hello world!");
+    String expectedJson = "{\"message\":\"Hello world!\"}";
 
-        assertEquals("Hello world!", message.getMessage());
+    @Test
+    void message() throws JsonProcessingException {
+        var greeting = new MyMessage("Hello world!");
+
+        var serialized = App.serialize(greeting);
+
+        assertEquals(expectedJson, serialized);
     }
 }

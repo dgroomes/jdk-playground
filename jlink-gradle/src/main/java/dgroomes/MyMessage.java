@@ -6,7 +6,7 @@ import java.util.Objects;
  * A simple POJO class
  */
 public class MyMessage {
-    private String message;
+    private final String message;
 
     public MyMessage(String message) {
         this.message = message;
