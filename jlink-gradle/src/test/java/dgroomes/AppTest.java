@@ -1,9 +1,10 @@
 package dgroomes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class AppTest {
 
@@ -15,6 +16,14 @@ class AppTest {
 
         var serialized = App.serialize(greeting);
 
-        assertEquals(expectedJson, serialized);
+        assertThat(serialized).isEqualTo(expectedJson);
+    }
+
+    @Disabled("Not yet implemented")
+    @Test
+    void findAllJavaClasses() {
+        var allJavaClasses = App.findAllJavaClasses();
+
+        assertThat(allJavaClasses).size().isGreaterThan(0);
     }
 }

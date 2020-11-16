@@ -35,5 +35,6 @@ See [jpackage-gradle/README.md](jpackage-gradle/README.md).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* Implement `jlink-gradle/`
+* DONE Implement `jlink-gradle/`
+* IN PROGRESS Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * Implement `jpackage-gradle/`
