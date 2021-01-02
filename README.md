@@ -30,6 +30,11 @@ This sub-project shows how to use [`jpackage`](https://openjdk.java.net/jeps/392
 
 See [jpackage-gradle/README.md](jpackage-gradle/README.md).
 
+### `single-file-source`
+
+This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP-330](https://openjdk.java.net/jeps/330).
+
+See [single-file-source/README.md](single-file-source/README.md).
 
 ## WishList
 
@@ -38,3 +43,8 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * DONE Implement `jlink-gradle/`
 * IN PROGRESS Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * Implement `jpackage-gradle/`
+
+## Referenced materials
+
+* [Another project of mine: `gradle-playground`](https://github.com/dgroomes/gradle-playground/tree/main/plugin)
+* [Another project of mine: `jshell-playground`](https://github.com/dgroomes/jshell-playground)

@@ -24,3 +24,4 @@ rootProject.name = "jdk-playground"
 // You get code completion and project navigation out-of-the-box. Pretty slick!
 includeBuild("jlink-gradle")
 includeBuild("jpackage-gradle")
+include("single-file-source")
