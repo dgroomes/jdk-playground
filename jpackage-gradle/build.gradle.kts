@@ -4,8 +4,7 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-    jcenter()
+    mavenCentral()
 }
 
 val junitJupiterVersion = "5.7.0" // releases: https://junit.org/junit5/docs/current/release-notes/index.html

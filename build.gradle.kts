@@ -25,8 +25,7 @@ project("single-file-source") {
     apply(plugin = "application")
 
     repositories {
-        mavenLocal()
-        jcenter()
+        mavenCentral()
     }
 
     java {

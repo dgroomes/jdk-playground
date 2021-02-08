@@ -20,7 +20,8 @@ if [[ -f "$CUSTOM_JRE/release" ]]; then
 fi
 
 # Use jdeps to list the Java modules that the program distribution depends on. The output will be usable by jlink.
-MODULES=$(jdeps --print-module-deps "$DISTRIBUTION/lib/"*.jar)
+# We need to use the "--multi-release" option because of the "classgraph" dependency (I don't know why).
+MODULES=$(jdeps --multi-release 11 --print-module-deps "$DISTRIBUTION/lib/"*.jar)
 echo "Building a custom JRE image with modules: $MODULES"
 
 # Build the custom JRE image.
