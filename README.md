@@ -20,7 +20,7 @@ The sub-projects include:
 
 This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a Gradle project to make a reduced-size JRE image (faster startup times and lower memory footprint!).
 
-See [jlink-gradle/README.md](jlink-gradle/README.md).
+See the README in [jlink-gradle/](jlink-gradle/).
 
 ### `jpackage-gradle/`
 
@@ -28,15 +28,15 @@ NOT YET IMPLEMENTED
 
 This sub-project shows how to use [`jpackage`](https://openjdk.java.net/jeps/392) on a Gradle project to package it as a self-contained Java application.
 
-See [jpackage-gradle/README.md](jpackage-gradle/README.md).
+See the README in [jpackage-gradle/](jpackage-gradle/).
 
 ### `single-file-source`
 
 This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP-330](https://openjdk.java.net/jeps/330).
 
-See [single-file-source/README.md](single-file-source/README.md).
+See the README in [single-file-source/](single-file-source/).
 
-## WishList
+## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
