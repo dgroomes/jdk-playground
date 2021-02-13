@@ -10,7 +10,7 @@ repositories {
 val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
 val jacksonVersion = "2.11.3" // releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
 val junitVersion = "5.7.0" // releases: https://junit.org/junit5/docs/current/release-notes/index.html
-val classGraphVersion = "4.8.90" // releases: https://github.com/classgraph/classgraph/releases
+val classGraphVersion = "4.8.102" // releases: https://github.com/classgraph/classgraph/releases
 val assertJVersion = "3.11.1" // releases: https://github.com/assertj/assertj-core/releases
 
 dependencies {

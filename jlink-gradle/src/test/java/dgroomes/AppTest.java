@@ -19,11 +19,11 @@ class AppTest {
         assertThat(serialized).isEqualTo(expectedJson);
     }
 
-    @Disabled("Not yet implemented")
     @Test
     void findAllJavaClasses() {
         var allJavaClasses = App.findAllJavaClasses();
 
-        assertThat(allJavaClasses).size().isGreaterThan(0);
+        assertThat(allJavaClasses).size().isGreaterThan(100);
+        assertThat(allJavaClasses.get(0).getName()).startsWith("java.");
     }
 }

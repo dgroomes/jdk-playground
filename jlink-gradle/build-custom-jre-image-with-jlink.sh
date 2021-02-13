@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 # Build the custom JRE image using 'jlink' and 'jdeps'.
-# This depends on the program distribution already having been built by Gradle using `./gradlew installDist`
+# This will also build the program distribution using `./gradlew installDist`
 
 set -eu
 
+# Build the distribution
+./gradlew installDist
+
 DISTRIBUTION=build/install/jlink-gradle
-
-if [[ ! -d "$DISTRIBUTION" ]]; then
-  echo >&2 "The program distribution must first be built. Exiting."
-  exit 1
-fi
-
 CUSTOM_JRE=build/custom-jre-image
 
 # Delete pre-existing image if it exists
