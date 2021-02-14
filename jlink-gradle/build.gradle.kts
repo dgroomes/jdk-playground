@@ -3,6 +3,10 @@ plugins {
     application
 }
 
+java {
+    modularity.inferModulePath.set(true)
+}
+
 repositories {
     mavenCentral()
 }
@@ -31,5 +35,6 @@ tasks {
 }
 
 application {
+    mainModule.set("dgroomes")
     mainClass.set("dgroomes.App")
 }
