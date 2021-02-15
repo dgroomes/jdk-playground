@@ -36,8 +36,21 @@ Instructions that include a custom JRE:
   [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-gradle/build/custom-jre-image
   [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
   ```
+  
+
+### Java Platform Module System
+
+Some working notes about wrangling with the JPMS and Gradle (I'm a newbie at JPMS):
+
+* `jdeps --generate-module-info . build/install/jlink-gradle/lib/slf4j-simple-1.7.30.jar build/install/jlink-gradle/lib/slf4j-api-1.7.30.jar`
+* From StackOverflow `javac --patch-module <module name>=<path to jar> module-info.java`
+* Doesn't work `javac --patch-module org.slf4j=build/install/jlink-gradle/lib/slf4j-api-1.7.30.jar org.slf4j/module-info.java`
+* (two deps) Doesn't work `javac --patch-module org.slf4j=build/install/jlink-gradle/lib/slf4j-api-1.7.30.jar org.slf4j/module-info.java --patch-module org.slf4j.simple=build/install/jlink-gradle/lib/slf4j-simple-1.7.30.jar org.slf4j.simple/module-info.java`
+* ? `javac --patch-module org.slf4j.simple=build/install/jlink-gradle/lib/slf4j-simple-1.7.30.jar org.slf4j.simple/module-info.java`
 
 ### Materials Referenced
 
 * [Azul blog post: "Using jlink to Build Java Runtimes for non-Modular Applications"](https://medium.com/azulsystems/using-jlink-to-build-java-runtimes-for-non-modular-applications-9568c5e70ef4)
-
+* [StackOverflow Q&A: *How to inject module declaration into JAR?*](https://stackoverflow.com/questions/47222226/how-to-inject-module-declaration-into-jar)
+  * The advice in this StackOverflow question and answer is needed for patching Java dependencies that are non-modularized (JPMS)
+    for working with `jlink`.
