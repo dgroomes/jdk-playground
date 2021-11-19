@@ -4,7 +4,7 @@ This sub-project explores Java's support for single-file source-code programs in
 
 ## Instructions
 
-* Use Java 15
+* Use Java 17
 * Run the program with `java src/Main.java`
   * Wow, the instructions are so simple! That's the whole point of single-file source programs! Thank you JEP-330!
 * The output will be:
