@@ -1,7 +1,5 @@
 # process
 
-NOT YET IMPLEMENTED
-
 Executing and managing operating system processes from a Java program.
 
 ---

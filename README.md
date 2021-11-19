@@ -30,11 +30,17 @@ This sub-project shows how to use [`jpackage`](https://openjdk.java.net/jeps/392
 
 See the README in [jpackage-gradle/](jpackage-gradle/).
 
-### `single-file-source`
+### `single-file-source/`
 
 This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP-330](https://openjdk.java.net/jeps/330).
 
 See the README in [single-file-source/](single-file-source/).
+
+### `process/`
+
+Executing and managing operating system processes from a Java program.
+
+See the README in [process/](process/).
 
 ## Wish List
 
@@ -43,6 +49,8 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * DONE Implement `jlink-gradle/`
 * IN PROGRESS Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * Implement `jpackage-gradle/`
+* Manage multiple processes in `process/`
+* Find existing processes and terminate them in `process/`
 
 ## Referenced materials
 
