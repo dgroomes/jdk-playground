@@ -1,0 +1,13 @@
+#!/usr/bin/env java --source 17
+//
+// This might not look like a valid Java source code file because it doesn't have the ".java" file extension, but it
+// indeed is valid thanks to Java's support for single-file source code programs and the "shebang" line support.
+//
+// See https://openjdk.java.net/jeps/330
+
+public class Main {
+    public static void main(String[] args) {
+        var classPath = System.getProperty("java.class.path");
+        System.out.printf("This program is running using java.class.path=%s%n", classPath);
+    }
+}
