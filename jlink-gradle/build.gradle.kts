@@ -7,11 +7,11 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
-val jacksonVersion = "2.11.3" // releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
-val junitVersion = "5.7.0" // releases: https://junit.org/junit5/docs/current/release-notes/index.html
-val classGraphVersion = "4.8.90" // releases: https://github.com/classgraph/classgraph/releases
-val assertJVersion = "3.11.1" // releases: https://github.com/assertj/assertj-core/releases
+val slf4jVersion = "1.7.32" // SLF4J releases: http://www.slf4j.org/news.html
+val jacksonVersion = "2.12.6" // Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
+val junitVersion = "5.8.2" // JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
+val classGraphVersion = "4.8.138" // ClassGraph releases: https://github.com/classgraph/classgraph/releases
+val assertJVersion = "3.21.0" // AssertJ releases: https://github.com/assertj/assertj-core/tags
 
 dependencies {
     implementation("org.slf4j:slf4j-api:$slf4jVersion")
@@ -25,7 +25,7 @@ dependencies {
 }
 
 tasks {
-    withType(Test::class.java) {
+    test {
         useJUnitPlatform()
     }
 }

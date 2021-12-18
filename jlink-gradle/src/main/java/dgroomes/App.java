@@ -32,7 +32,7 @@ public class App {
      * NOT YET IMPLEMENTED
      *
      * Find all the classes of the Java standard library. In a custom JRE image built by jlink there will be fewer
-     * classes than in a regular distribiption of the JRE! This method can be used to illustrate that.
+     * classes than in a regular distribution of the JRE! This method can be used to illustrate that.
      *
      * @return a list of the fully qualified class names
      */
