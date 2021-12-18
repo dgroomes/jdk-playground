@@ -42,8 +42,9 @@ Follow these instructions to build and run the program **with** a custom `jlink`
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* Upgrade to the latest version of Jackson. For some reason when I upgrade to Jackson 2.13.x I get a `com.sun.tools.jdeps.MultiReleaseException`
-  when I run `jdeps`. I'm guessing Jackson 2.13.x is modularized.
+* Wait for Java 18 is releases and upgrade to it and then upgrade to the latest version of Jackson. There is a defect in
+  `jdeps` when I upgrade to Jackson 2.13.x which causes a `com.sun.tools.jdeps.MultiReleaseException`. This issue is
+  described in this [StackOverflow answer](https://stackoverflow.com/a/70011064).
 * Refactor `MyMessage` to a record.
 
 ## Reference
