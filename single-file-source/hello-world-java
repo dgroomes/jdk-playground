@@ -1,0 +1,71 @@
+#!/usr/bin/env java --source 17
+//
+// This might not look like a valid Java source code file because it doesn't have the ".java" file extension, but it
+// indeed is valid thanks to Java's support for single-file source-code programs and the "shebang line" support.
+//
+// See https://openjdk.java.net/jeps/330
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.CodeSource;
+import java.util.LinkedHashMap;
+
+/**
+ * This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
+ */
+public class HelloWorld {
+
+    public static void main(String[] args) throws URISyntaxException, IOException {
+        System.out.printf("Hello world from a single-file source-code Java program, thanks to JEP 330!%n%n");
+
+        var details = new LinkedHashMap<String, Object>();
+
+        {
+            // Find the classpath. Because this is a single-file program, there aren't other source code dependencies and
+            // there shouldn't be any .jar dependencies either. The classpath should be empty! Specifically, it will be an
+            // empty string "".
+            var classPath = System.getProperty("java.class.path");
+            details.put("Classpath", "'" + classPath + "'");
+        }
+
+        {
+            // Find the current working directory. This is the directory that launched the process. It is not necessarily
+            // the directory containing the source code file.
+            String currentDir = System.getProperty("user.dir");
+            details.put("Current directory", currentDir);
+        }
+
+        {
+            // Find the containing directory of this source code file.
+            //
+            // We can find a "CodeSource" object that represents the source code file. If the program was launched using a
+            // symlink to the actual source code file, this will be the symlink file.
+            CodeSource codeSource = HelloWorld.class.getProtectionDomain().getCodeSource();
+
+            // Note: "Path.normalize()" will remove intermediate dot (".") components from the path.
+            // For example, "/path/to/./myfile" will become "/path/to/myfile"
+            Path sourceFilePath = Path.of(codeSource.getLocation().toURI()).normalize();
+
+            if (Files.isSymbolicLink(sourceFilePath)) {
+                details.put("Source path (symbolic link)", sourceFilePath);
+                sourceFilePath = sourceFilePath.toRealPath();
+                details.put("Source path (real path)", sourceFilePath);
+            } else {
+                details.put("Source path", sourceFilePath);
+            }
+            File sourceCodeDir = sourceFilePath.toFile().getParentFile();
+            details.put("Program source code directory", sourceCodeDir);
+        }
+
+        // Print the details
+        for (var entry : details.entrySet()) {
+            String description = entry.getKey();
+            Object value = entry.getValue();
+            System.out.printf("\t%30s: %s%n", description, value);
+        }
+        System.out.println();
+    }
+}
