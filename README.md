@@ -56,3 +56,5 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [Another project of mine: `gradle-playground`](https://github.com/dgroomes/gradle-playground/tree/main/plugin)
 * [Another project of mine: `jshell-playground`](https://github.com/dgroomes/jshell-playground)
+* [ASM](https://asm.ow2.io/index.html)
+  > ASM is an all purpose Java bytecode manipulation and analysis framework. 
