@@ -20,8 +20,10 @@ Follow these instructions to build and run the program the **boring way, without
    * `./gradlew run`
    * The output will be something like:
      ```
-     [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/.sdkman/candidates/java/11.0.8.hs-adpt
-     [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     21:53:25.594 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/.sdkman/candidates/java/17.0.1-tem
+     21:53:25.803 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     21:53:27.055 [main] INFO dgroomes.App - Found 1920 classes in the Java standard library on the classpath in PT1.250711S
+     21:53:27.056 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
      ```
 
 Follow these instructions to build a custom reduced-size JRE **with `jlink`** and run the program:
@@ -49,9 +51,13 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
    * `./run-with-custom-jre-image.sh`
    * The output will be something like:
      ```
-     [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-gradle/build/custom-jre-image
-     [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     21:54:16.482 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-gradle/build/custom-jre-image
+     21:54:16.670 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     21:54:17.664 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.992336S
+     21:54:17.664 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
+     Notice how there are hundreds fewer classes than before! The execution time was a bit faster too, but not by much.
+     A more extensive test must be done if you're interested in performance improvements.
 
 ## Java Platform Module System
 

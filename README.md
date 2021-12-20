@@ -47,7 +47,7 @@ See the README in [process/](process/).
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * DONE Implement `jlink-gradle/`
-* Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
+* DONE Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * Implement `jpackage-gradle/`
 * Manage multiple processes in `process/`
 * Find existing processes and terminate them in `process/`
