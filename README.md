@@ -18,7 +18,7 @@ The sub-projects include:
 
 ### `jlink-gradle/`
 
-This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a Gradle project to make a reduced-size JRE image (faster startup times and lower memory footprint!).
+This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image (faster startup times and lower memory footprint!).
 
 See the README in [jlink-gradle/](jlink-gradle/).
 
@@ -47,7 +47,7 @@ See the README in [process/](process/).
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * DONE Implement `jlink-gradle/`
-* IN PROGRESS Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
+* Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * Implement `jpackage-gradle/`
 * Manage multiple processes in `process/`
 * Find existing processes and terminate them in `process/`

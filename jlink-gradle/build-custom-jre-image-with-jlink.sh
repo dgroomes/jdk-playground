@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# Build the custom JRE image using 'jlink' and 'jdeps'.
-# This depends on the program distribution already having been built by Gradle using `./gradlew installDist`
+# Build a custom JRE image using jlink.
+#
+# This depends on the program distribution already having been built by Gradle using `./gradlew installDist` and that
+# the "modules.txt" file has been hand-crafted to list the exact Java modules that the program depends on.
 
 set -eu
 
@@ -19,9 +21,7 @@ if [[ -f "$CUSTOM_JRE/release" ]]; then
   rm -rf "$CUSTOM_JRE"
 fi
 
-# Use jdeps to list the Java modules that the program distribution depends on. The output will be usable by jlink.
-# We need to use the "--multi-release" option because of the "classgraph" dependency (I don't know why).
-MODULES=$(jdeps --multi-release 11 --print-module-deps "$DISTRIBUTION/lib/"*.jar)
+MODULES=$(cat modules.txt)
 echo "Building a custom JRE image with modules: $MODULES"
 
 # Build the custom JRE image.
