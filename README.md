@@ -22,6 +22,12 @@ This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) o
 
 See the README in [jlink-non-modular/](jlink-non-modular/).
 
+### `jlink-modular/`
+
+Use [`jlink`](https://openjdk.java.net/jeps/282) on a fully-modularized Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
+
+See the README in [jlink-modular/](jlink-modular/).
+
 ### `jpackage-gradle/`
 
 NOT YET IMPLEMENTED
@@ -51,6 +57,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * Implement `jpackage-gradle/`
 * Manage multiple processes in `process/`
 * Find existing processes and terminate them in `process/`
+* DONE Create a `jlink-modular/` project that is a modularized version of `jlink-non-modular/`
 
 ## Referenced materials
 
