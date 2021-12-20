@@ -22,7 +22,7 @@ rootProject.name = "jdk-playground"
 // Gradle "included builds". See https://docs.gradle.org/current/userguide/composite_builds.html. Now, when someone
 // clones this repo and opens it in Intellij, all the sub-projects are automatically identified by Intellij and indexed.
 // You get code completion and project navigation out-of-the-box. Pretty slick!
-includeBuild("jlink-gradle")
+includeBuild("jlink-non-modular")
 includeBuild("jpackage-gradle")
 includeBuild("process")
 include("single-file-source")

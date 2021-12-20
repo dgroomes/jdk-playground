@@ -1,6 +1,6 @@
-# jlink-gradle
+# jlink-non-modular
 
-This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image (faster startup times and lower memory footprint!).
+This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
 
 ---
 **NOTE**:
@@ -51,10 +51,10 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
    * `./run-with-custom-jre-image.sh`
    * The output will be something like:
      ```
-     21:54:16.482 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-gradle/build/custom-jre-image
-     21:54:16.670 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     21:54:17.664 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.992336S
-     21:54:17.664 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
+     23:10:25.708 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-non-modular/build/custom-jre-image
+     23:10:25.919 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     23:10:26.904 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.982713S
+     23:10:26.905 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
      Notice how there are hundreds fewer classes than before! The execution time was a bit faster too, but not by much.
      A more extensive test must be done if you're interested in performance improvements.

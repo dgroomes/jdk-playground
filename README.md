@@ -16,11 +16,11 @@ re-using the code.
 
 The sub-projects include:
 
-### `jlink-gradle/`
+### `jlink-non-modular/`
 
-This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image (faster startup times and lower memory footprint!).
+This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
 
-See the README in [jlink-gradle/](jlink-gradle/).
+See the README in [jlink-non-modular/](jlink-non-modular/).
 
 ### `jpackage-gradle/`
 

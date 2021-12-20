@@ -6,7 +6,7 @@
 
 set -eu
 
-DISTRIBUTION=build/install/jlink-gradle
+DISTRIBUTION=build/install/jlink-non-modular
 
 if [[ ! -d "$DISTRIBUTION" ]]; then
   echo >&2 "The program distribution must first be built. Exiting."

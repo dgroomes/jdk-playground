@@ -5,7 +5,7 @@
 #   * the program distribution to have been built already
 #   * the custom JRE to have been built already
 
-if [[ ! -d build/install/jlink-gradle ]]; then
+if [[ ! -d build/install/jlink-non-modular ]]; then
   echo >&2 "The program distribution must be built. Exiting."
   exit 1
 fi
@@ -17,4 +17,4 @@ fi
 
 export JAVA_HOME="build/custom-jre-image"
 
-build/install/jlink-gradle/bin/jlink-gradle
+build/install/jlink-non-modular/bin/jlink-non-modular
