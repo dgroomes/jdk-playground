@@ -2,27 +2,32 @@
 
 This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
 
+
 ## Instructions
+
+Follow these instructions to run the single-file source-code program.
 
 1. Use Java 17
 2. Compile and run the program with one command!
-   * `./hello-world-java`
-   * Wow, the instructions were so simple! That's the whole point of single-file source programs! Thank you JEP-330!
-   * The output will be something like this:
-    ```bash
+   * ```shell
      ./hello-world-java
-     Hello world from a single-file source-code Java program, thanks to JEP 330!
-	                              Classpath: ''
-	                      Current directory: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source
-	                            Source path: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source/hello-world-java
-	          Program source code directory: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source
-    ```
+     ```
+   * Wow, the instructions were so simple! That's the whole point of single-file source programs! Thank you JEP-330!
+   * Altogether, it will look something like this:
+     ```text
+      $ ./hello-world-java
+      Hello world from a single-file source-code Java program, thanks to JEP 330!
+	                               Classpath: ''
+	                       Current directory: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source
+	                             Source path: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source/hello-world-java
+	           Program source code directory: /Users/davidgroomes/repos/personal/jdk-playground/single-file-source
+     ```
 
 Alternatively, move to a different directory, like the parent directory, and run the program. Notice the different file
 paths in the program output:
 
-```bash
-single-file-source/hello-world-java
+```text
+$ single-file-source/hello-world-java
 Hello world from a single-file source-code Java program, thanks to JEP 330!
 
 	                     Classpath: ''
@@ -35,10 +40,10 @@ Alternatively, symlink the program and run the program via the symlink. If you s
 like `/usr/local/bin`, then you can run the program from anywhere on your system! In the example output below, notice
 the "(symbolic link)" and "(real path)" descriptors:
 
-```bash
-ln -sf /Users/davidgroomes/repos/personal/jdk-playground/single-file-source/hello-world-java /usr/local/bin/hello-world-java
-cd ~
-hello-world-java
+```text
+$ ln -sf /Users/davidgroomes/repos/personal/jdk-playground/single-file-source/hello-world-java /usr/local/bin/hello-world-java
+$ cd ~
+$ hello-world-java
 Hello world from a single-file source-code Java program, thanks to JEP 330!
 
 	                     Classpath: ''
@@ -49,10 +54,9 @@ Hello world from a single-file source-code Java program, thanks to JEP 330!
 ```
 
 
-
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* DONE When running a Java single-file source code program can you find the directory where
+* [x] DONE When running a Java single-file source code program can you find the directory where
   the file is running from, even with symlinks, like you could in Bash?
