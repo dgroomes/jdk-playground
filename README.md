@@ -49,7 +49,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
-* [ ] IN PROGRESS Convert projects to use Gradle version catalog + TOML
+* [x] DONE Convert projects to use Gradle version catalog + TOML
 * [ ] Add a `jextract` subproject. It should call a C function from Java.
 
 
