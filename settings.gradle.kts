@@ -25,4 +25,5 @@ rootProject.name = "jdk-playground"
 includeBuild("jlink-non-modular")
 includeBuild("jlink-modular")
 includeBuild("process")
+includeBuild("jextract")
 include("single-file-source")

@@ -18,11 +18,13 @@ re-using the code.
 
 The sub-projects include:
 
+
 ### `jlink-non-modular/`
 
 This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
 
 See the README in [jlink-non-modular/](jlink-non-modular/).
+
 
 ### `jlink-modular/`
 
@@ -30,11 +32,20 @@ Use [`jlink`](https://openjdk.java.net/jeps/282) on a fully-modularized Java Gra
 
 See the README in [jlink-modular/](jlink-modular/).
 
+
+### `jextract/`
+
+Call from Java code into C code using the `jextract` tool.
+
+See the README in [jextract/](jextract/).
+
+
 ### `single-file-source/`
 
 This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
 
 See the README in [single-file-source/](single-file-source/).
+
 
 ### `process/`
 
@@ -50,7 +61,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
 * [x] DONE Convert projects to use Gradle version catalog + TOML
-* [ ] Add a `jextract` subproject. It should call a C function from Java.
+* [x] DONE Add a `jextract` subproject. It should call a C function from Java.
 
 
 ## Finished Wish List Items
