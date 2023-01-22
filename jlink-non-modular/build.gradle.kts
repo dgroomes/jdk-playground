@@ -7,21 +7,15 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.36" // SLF4J releases: http://www.slf4j.org/news.html
-val jacksonVersion = "2.14.1" // Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
-val junitVersion = "5.9.2" // JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
-val classGraphVersion = "4.8.154" // ClassGraph releases: https://github.com/classgraph/classgraph/releases
-val assertJVersion = "3.24.2" // AssertJ releases: https://github.com/assertj/assertj-core/tags
-
 dependencies {
-    implementation("org.slf4j:slf4j-api:$slf4jVersion")
-    implementation("org.slf4j:slf4j-simple:$slf4jVersion")
-    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-    implementation("io.github.classgraph:classgraph:$classGraphVersion")
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.simple)
+    implementation(libs.jackson.databind)
+    implementation(libs.classgraph)
 
-    testImplementation("org.assertj:assertj-core:$assertJVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    testImplementation(libs.assertj)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 }
 
 tasks {
