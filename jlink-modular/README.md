@@ -33,6 +33,10 @@ Follow these instructions to build and run the program the **boring way, without
      18:30:26.004 [main] INFO dgroomes.App - Found 1837 classes in the Java standard library on the classpath in PT0.279508S
      18:30:26.005 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
      ```
+   * Without modularization, the program would have found even more Java standard library classes. Because the program
+     is modularized, the Java runtime did not expose certain classes to the program because they were not required by the
+     `module-info.java` file. For example, the classes in `java.net.http` are missing. This is a good thing! It is a
+     classic example of the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
 
 Follow these instructions to build a custom reduced-size JRE **with `jlink`** and run the program:
 
@@ -55,7 +59,9 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
      18:32:47.398 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.190922S
      18:32:47.399 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
-     Notice how there are hundreds fewer classes than before!
+   * Notice how there are hundreds fewer classes than before! We are following the principle of least privilege even more
+     closely now and the program runs faster and with less memory. `jlink` was able to confidently identify unneeded
+     modules and exclude them from the custom JRE image.
 
 
 ## Reference
