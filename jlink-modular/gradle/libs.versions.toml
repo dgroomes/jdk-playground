@@ -1,0 +1,24 @@
+[versions]
+# SLF4J releases: http://www.slf4j.org/news.html
+slf4j = "2.0.6"
+
+# ClassGraph releases: https://github.com/classgraph/classgraph/releases
+classgraph = "4.8.154"
+
+# Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
+jackson = "2.14.1"
+
+# JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
+junit = "5.9.2"
+
+# AssertJ releases: https://github.com/assertj/assertj-core/tags
+assertj = "3.24.2"
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+classgraph = { module = "io.github.classgraph:classgraph", version.ref = "classgraph" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
