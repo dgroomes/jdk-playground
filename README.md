@@ -47,11 +47,17 @@ See the README in [process/](process/).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
+* [ ] Manage multiple processes in `process/`
+* [ ] Find existing processes and terminate them in `process/`
+* [ ] Convert projects to use Gradle version catalog + TOML
+* [ ] Add a `jextract` subproject. It should call a C function from Java.
+
+
+## Finished Wish List Items
+
 * [x] DONE Implement `jlink-gradle/`
 * [x] DONE Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
 * [ ] ABANDON Implement `jpackage-gradle/`
-* [ ] Manage multiple processes in `process/`
-* [ ] Find existing processes and terminate them in `process/`
 * [x] DONE Create a `jlink-modular/` project that is a modularized version of `jlink-non-modular/`
 
 
