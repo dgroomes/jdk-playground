@@ -22,5 +22,6 @@ fi
 # non-modularized jar is visited, the "jar --describe-module" command will output "No module descriptor found. Derived automatic module."
 # Ignore it.
 for jarfile in "$DISTRIBUTION/lib/"*; do
+  echo "Inspecting the jar file '$jarfile' for explicitly listed module characteristics..."
   jar --file="$jarfile" --describe-module --release 17
 done

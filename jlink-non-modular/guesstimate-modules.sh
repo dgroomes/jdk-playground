@@ -9,7 +9,7 @@
 #
 # By contrast, for the modularized components of the program we can find the exact module dependencies. For example, the
 # ClassGraph library dependency is actually modularized. It depends on "java.xml", "jdk.unsupported", "java.management",
-# and "java.logging". We find this just by looking at the dependency declarations in its "module-info.java" file: https://github.com/classgraph/classgraph/blob/905edfc660948aee1b0b2b7d6e240e402c33d319/src/module-info/io.github.classgraph/module-info.java
+# and "java.logging". We find this just by looking at the dependency declarations in its "module-info.java" file: https://github.com/classgraph/classgraph/blob/8b358c63db2b4a5dc844f96e9453809b8f83adf8/src/module-info/io.github.classgraph/module-info.java
 # The 'list-explicit-modules.sh' script is an accompaniment script to this one and it does exactly that.
 #
 # The more the program is modularized, the less guesswork about its dependencies!

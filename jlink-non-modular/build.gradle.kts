@@ -7,11 +7,11 @@ repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.32" // SLF4J releases: http://www.slf4j.org/news.html
-val jacksonVersion = "2.12.6" // Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
-val junitVersion = "5.8.2" // JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
-val classGraphVersion = "4.8.138" // ClassGraph releases: https://github.com/classgraph/classgraph/releases
-val assertJVersion = "3.21.0" // AssertJ releases: https://github.com/assertj/assertj-core/tags
+val slf4jVersion = "1.7.36" // SLF4J releases: http://www.slf4j.org/news.html
+val jacksonVersion = "2.14.1" // Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
+val junitVersion = "5.9.2" // JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
+val classGraphVersion = "4.8.154" // ClassGraph releases: https://github.com/classgraph/classgraph/releases
+val assertJVersion = "3.24.2" // AssertJ releases: https://github.com/assertj/assertj-core/tags
 
 dependencies {
     implementation("org.slf4j:slf4j-api:$slf4jVersion")

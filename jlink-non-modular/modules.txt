@@ -1,1 +1,1 @@
-java.logging,java.management,jdk.unsupported
+java.base
