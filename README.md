@@ -2,10 +2,12 @@
 
 📚 Learning and exploring tools in the JDK (Java Development Kit).
 
+
 ## Overview
 
 I want to learn about tools in the JDK like `jlink` and `jpackage`. In this repository, I will write working example
 projects that use these tools.
+
 
 ## Standalone sub-projects
 
@@ -28,14 +30,6 @@ Use [`jlink`](https://openjdk.java.net/jeps/282) on a fully-modularized Java Gra
 
 See the README in [jlink-modular/](jlink-modular/).
 
-### `jpackage-gradle/`
-
-NOT YET IMPLEMENTED
-
-This sub-project shows how to use [`jpackage`](https://openjdk.java.net/jeps/392) on a Gradle project to package it as a self-contained Java application.
-
-See the README in [jpackage-gradle/](jpackage-gradle/).
-
 ### `single-file-source/`
 
 This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
@@ -48,18 +42,20 @@ Executing and managing operating system processes from a Java program.
 
 See the README in [process/](process/).
 
+
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* DONE Implement `jlink-gradle/`
-* DONE Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
-* Implement `jpackage-gradle/`
-* Manage multiple processes in `process/`
-* Find existing processes and terminate them in `process/`
-* DONE Create a `jlink-modular/` project that is a modularized version of `jlink-non-modular/`
+* [x] DONE Implement `jlink-gradle/`
+* [x] DONE Scan the classpath for all classes in the "java.*" package to make a more impactful demo of jlink. Use ["classgraph"](https://github.com/classgraph/classgraph)
+* [ ] ABANDON Implement `jpackage-gradle/`
+* [ ] Manage multiple processes in `process/`
+* [ ] Find existing processes and terminate them in `process/`
+* [x] DONE Create a `jlink-modular/` project that is a modularized version of `jlink-non-modular/`
 
-## Referenced materials
+
+## Reference
 
 * [Another project of mine: `gradle-playground`](https://github.com/dgroomes/gradle-playground/tree/main/plugin)
 * [Another project of mine: `jshell-playground`](https://github.com/dgroomes/jshell-playground)
