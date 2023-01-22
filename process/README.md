@@ -9,7 +9,8 @@ This was developed on macOS and for my own personal use.
 
 ---
 
-## Description
+
+## Overview
 
 I want to learn how to execute other programs from a Java program. Usually, we prefer not to do this and instead favor
 using a shell script to execute other programs. Java is generally a poor fit for "scripting" use-cases, however Java's
@@ -25,17 +26,25 @@ For those reasons I haven't had to learn how to start OS processes from a Java p
 Also, this project doesn't really belong in `jdk-playground` because it explores Java runtime features like the `java.lang.ProcessBuilder`
 class and does not explore JDK tooling. But, I didn't want to create yet another `java-` playground.
 
+
 ## Instructions
 
 Follow these instructions to build and run the program.
 
 1. Use Java 17
 2. Build the program distribution:
-   * `./gradlew installDist`
+   * ```shell
+     ./gradlew installDist
+     ```
 3. Run the program:
-   * `build/install/process/bin/process`
+   * ```shell
+     build/install/process/bin/process
+     ```
    * Tip: alias the previous two commands into one with the following alias.
-   * `alias doit="./gradlew installDist && build/install/process/bin/process"`
+   * ```shell
+     alias doit="./gradlew installDist && build/install/process/bin/process"
+     ```
+
 
 ## Reference
 
