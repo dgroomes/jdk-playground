@@ -22,9 +22,9 @@ the library from Java code.
 
 Follow these instructions to build the C library, the Java program and run the Java program.
 
-1. Use Java 19
+1. Use Java 20
 2. Use a matching `jextract` distribution
-   * [This one](https://jdk.java.net/jextract/) should work well for Java 19
+   * [Download one from OpenJDK](https://jdk.java.net/jextract/). 
 3. Compile the C library
    * ```shell
      clang -dynamiclib -o lucky_number.dylib lucky_number.c
