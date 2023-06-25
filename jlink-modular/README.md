@@ -28,10 +28,10 @@ Follow these instructions to build and run the program the **boring way, without
      ```
    * The output will be something like:
      ```text
-     18:30:25.652 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/.sdkman/candidates/java/17.0.5-tem
-     18:30:25.723 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     18:30:26.004 [main] INFO dgroomes.App - Found 1837 classes in the Java standard library on the classpath in PT0.279508S
-     18:30:26.005 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
+     13:06:34.498 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/.sdkman/candidates/java/17.0.7-tem
+     13:06:34.559 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     13:06:34.785 [main] INFO dgroomes.App - Found 1837 classes in the Java standard library on the classpath in PT0.22508S
+     13:06:34.785 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
      ```
    * Without modularization, the program would have found even more Java standard library classes. Because the program
      is modularized, the Java runtime did not expose certain classes to the program because they were not required by the
@@ -54,10 +54,10 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
      ```
    * The output will be something like:
      ```text
-     18:32:47.143 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-modular/build/custom-jre-image
-     18:32:47.207 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     18:32:47.398 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.190922S
-     18:32:47.399 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
+     13:08:05.060 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/repos/personal/jdk-playground/jlink-modular/build/custom-jre-image
+     13:08:05.114 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     13:08:05.280 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.165495S
+     13:08:05.280 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
    * Notice how there are hundreds fewer classes than before! We are following the principle of least privilege even more
      closely now and the program runs faster and with less memory. `jlink` was able to confidently identify unneeded
