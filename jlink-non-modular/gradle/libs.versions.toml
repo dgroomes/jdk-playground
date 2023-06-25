@@ -1,15 +1,15 @@
 [versions]
 # SLF4J releases: http://www.slf4j.org/news.html
-slf4j = "2.0.6"
+slf4j = "2.0.7"
 
 # ClassGraph releases: https://github.com/classgraph/classgraph/releases
-classgraph = "4.8.154"
+classgraph = "4.8.160"
 
 # Jackson releases: https://github.com/FasterXML/jackson/wiki/Jackson-Releases
-jackson = "2.14.1"
+jackson = "2.15.2"
 
 # JUnit releases: https://junit.org/junit5/docs/current/release-notes/index.html
-junit = "5.9.2"
+junit = "5.9.3"
 
 # AssertJ releases: https://github.com/assertj/assertj-core/tags
 assertj = "3.24.2"

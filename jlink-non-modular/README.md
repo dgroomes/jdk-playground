@@ -1,6 +1,6 @@
 # jlink-non-modular
 
-This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
+This subproject shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
 
 ---
 **NOTE**:
@@ -64,10 +64,10 @@ Follow these instructions to build and run the program the **boring way, without
      ```
    * The output will be something like:
      ```text
-     19:06:20.949 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/.sdkman/candidates/java/17.0.5-tem
-     19:06:21.032 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     19:06:21.352 [main] INFO dgroomes.App - Found 1920 classes in the Java standard library on the classpath in PT0.318873S
-     19:06:21.352 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
+     12:35:14.281 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/.sdkman/candidates/java/17.0.7-tem
+     12:35:14.355 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     12:35:14.638 [main] INFO dgroomes.App - Found 1920 classes in the Java standard library on the classpath in PT0.282457S
+     12:35:14.638 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
      ```
 
 Follow these instructions to build a custom reduced-size JRE **with `jlink`** and run the program:
@@ -86,10 +86,10 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
      ```
    * The output will be something like:
      ```text
-     23:55:29.947 [main] INFO dgroomes.App - This program is running using java.home=/Users/davidgroomes/repos/personal/jdk-playground/jlink-non-modular/build/custom-jre-image
-     23:55:30.039 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     23:55:30.276 [main] INFO dgroomes.App - Found 1219 classes in the Java standard library on the classpath in PT0.236236S
-     23:55:30.279 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
+     12:46:12.944 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/repos/personal/jdk-playground/jlink-non-modular/build/custom-jre-image
+     12:46:13.015 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     12:46:13.192 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.177128S
+     12:46:13.193 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
      Notice how there are hundreds fewer classes than before! The execution time was a bit faster too. A more extensive
      test must be done if you're interested in performance improvements.
@@ -101,7 +101,7 @@ There is lots of good information about the Java Platform Module System (JPMS) a
 like `jlink` because it has now been over four years since the release of Java 9! Blog posts, StackOverflow questions
 and answers and other information have accumulated over this time to describe facets of Java 9 and how to use it. I
 personally am only now getting into the JPMS stuff and I think it's pretty cool and I also think it's a bit complicated.
-This sub-project tries to show how you might take the `jlink` tool to make a custom reduced-size JRE image for a
+This subproject tries to show how you might take the `jlink` tool to make a custom reduced-size JRE image for a
 prototypical Java/Gradle project. And by prototypical I mean *non-modular*! Most Java projects out in the wild are still
 non-modular and even most new projects remain non-modular. Was modularization a failed experiment for user code? Is it
 only a useful feature for the Java platform itself? I don't know, but I've learned some things about it.
