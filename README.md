@@ -9,19 +9,19 @@ I want to learn about tools in the JDK like `jlink` and `jpackage`. In this repo
 projects that use these tools.
 
 
-## Standalone sub-projects
+## Standalone subprojects
 
-This repository illustrates different concepts, patterns and examples via standalone sub-projects. Each sub-project is
-completely independent of the others and do not depend on the root project. This _standalone sub-project constraint_
-forces the sub-projects to be complete and maximizes the reader's chances of successfully running, understanding, and
+This repository illustrates different concepts, patterns and examples via standalone subprojects. Each subproject is
+completely independent of the others and do not depend on the root project. This _standalone subproject constraint_
+forces the subprojects to be complete and maximizes the reader's chances of successfully running, understanding, and
 re-using the code.
 
-The sub-projects include:
+The subprojects include:
 
 
 ### `jlink-non-modular/`
 
-This sub-project shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
+This subproject shows how to use [`jlink`](https://openjdk.java.net/jeps/282) on a non-modular Java Gradle project to make a reduced-size JRE image for a lower memory footprint and faster startup!
 
 See the README in [jlink-non-modular/](jlink-non-modular/).
 
@@ -42,7 +42,7 @@ See the README in [jextract/](jextract/).
 
 ### `single-file-source/`
 
-This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
+This subproject explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
 
 See the README in [single-file-source/](single-file-source/).
 
@@ -58,6 +58,7 @@ See the README in [process/](process/).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
+* [x] DONE June 2023 Dependency upgrades. Gradle, Java etc.
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
 * [x] DONE Convert projects to use Gradle version catalog + TOML

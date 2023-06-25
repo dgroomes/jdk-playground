@@ -8,9 +8,9 @@ plugins {
   extensive note in the file `settings.gradle.kts` for more information. This Gradle file is not meant to be used as an
   example.
 
-  This build file will define the sub-project `single-file-source/` as a Gradle project so that Intellij will
+  This build file will define the subproject `single-file-source/` as a Gradle project so that Intellij will
   automatically recognize the source code provide a working "click the green play button to execute the program" experience.
-  But, importantly, this sub-project still works as a standalone project without Gradle.
+  But, importantly, this subproject still works as a standalone project without Gradle.
 
   A good test for validating that this Gradle configuration works is to actually execute the main methods. Try it with:
     * `./gradlew single-file-source:run`
