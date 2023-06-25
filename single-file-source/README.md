@@ -1,6 +1,6 @@
 # single-file-source
 
-This sub-project explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
+This subproject explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
 
 
 ## Instructions
