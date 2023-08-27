@@ -58,7 +58,7 @@ See the README in [process/](process/).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Implement a `heap-dump/` subproject. Maybe use VisualVM or maybe just do something headless by reading a heap dump
+* [ ] ABANDON (Java doesn't offer an API for reading heap dumps. You have to reach for third party tools. That's fine but that makes the cost too high for me right now.) Implement a `heap-dump/` subproject. Maybe use VisualVM or maybe just do something headless by reading a heap dump
   from within a Java program and just summarizing the top-level data like instance count. Mainly, I want to learn the
   components of a heap dump and not so much about actual performance analysis.
 * [ ] Manage multiple processes in `process/`

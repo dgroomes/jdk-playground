@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     implementation(libs.slf4j.api)
-    implementation(libs.slf4j.simple)
+    runtimeOnly(libs.slf4j.simple)
     implementation(libs.jackson.databind)
     implementation(libs.classgraph)
 
