@@ -8,6 +8,13 @@
 I want to learn about tools in the JDK like `jlink` and `jpackage`. In this repository, I will write working example
 projects that use these tools.
 
+---
+**NOTE**:
+
+This was developed on macOS and for my own personal use.
+
+---
+
 
 ## Standalone subprojects
 
@@ -53,6 +60,12 @@ Executing and managing operating system processes from a Java program.
 
 See the README in [process/](process/).
 
+### `foreign-memory/`
+
+Writing and reading "off-heap" memory segments using Java's foreign memory API.
+
+See the README in [foreign-memory/](foreign-memory/).
+
 
 ## Wish List
 
@@ -63,6 +76,9 @@ General clean-ups, TODOs and things I wish to implement for this project:
   components of a heap dump and not so much about actual performance analysis.
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
+* [x] DONE Do something with foreign memory using the [Foreign Function & Memory API](https://openjdk.org/jeps/442). Can I
+  write a segment of string data to memory and then read it back out? While this is a contrived example, I want to make
+  sense of the API and just generally get better at understanding how software interacts with memory (in diverse ways).
 
 
 ## Finished Wish List Items

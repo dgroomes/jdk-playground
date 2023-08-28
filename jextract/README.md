@@ -13,7 +13,7 @@ I want a Java program that can call into a native library written in C. I've wan
 has had a few years to mature so now is a good time to try it out.
 
 [Apache Lucene is using](https://github.com/apache/lucene/commit/3b9c728ab558255eb8329a017b9d235611d7b142) Java's exciting
-[Foreign Function & Memory API](https://openjdk.org/jeps/424) which was delivered as a preview in Java 19. This is cool.
+[Foreign Function & Memory API](https://openjdk.org/jeps/442) which was delivered as a preview in Java 19. This is cool.
 I want to to use `jextract` to generate Java bindings for a native library and then use the Foreign Function API to call
 the library from Java code.
 
