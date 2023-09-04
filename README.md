@@ -60,12 +60,6 @@ Executing and managing operating system processes from a Java program.
 
 See the README in [process/](process/).
 
-### `foreign-memory/`
-
-Writing and reading "off-heap" memory segments using Java's foreign memory API.
-
-See the README in [foreign-memory/](foreign-memory/).
-
 
 ## Wish List
 
