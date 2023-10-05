@@ -11,10 +11,10 @@ final class constants$0 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$0() {}
-    static final FunctionDescriptor luckyNumber$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle luckyNumber$MH = RuntimeHelper.downcallHandleVariadic(
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
         "luckyNumber",
-        constants$0.luckyNumber$FUNC
+        constants$0.const$0
     );
 }
 

@@ -13,8 +13,8 @@ I want a Java program that can call into a native library written in C. I've wan
 has had a few years to mature so now is a good time to try it out.
 
 [Apache Lucene is using](https://github.com/apache/lucene/commit/3b9c728ab558255eb8329a017b9d235611d7b142) Java's exciting
-[Foreign Function & Memory API](https://openjdk.org/jeps/442) which was delivered as a preview in Java 19. This is cool.
-I want to to use `jextract` to generate Java bindings for a native library and then use the Foreign Function API to call
+[Foreign Function & Memory API](https://openjdk.org/jeps/442) which is a preview feature in Java 21. This is cool.
+I want to use `jextract` to generate Java bindings for a native library and then use the Foreign Function API to call
 the library from Java code.
 
 
@@ -22,7 +22,10 @@ the library from Java code.
 
 Follow these instructions to build the C library, the Java program and run the Java program.
 
-1. Use Java 20
+1. Pre-requisite: Java 21
+   * The source code is authored for Java 21 and must be compiled with Java 21. It's up to you if you want to run Gradle
+     on Java 21 or earlier. Gradle does not technically endorse support for running on Java 21 yet. See the "Support for
+     running Gradle" section in the Gradle [Compatibility Matrix](https://docs.gradle.org/current/userguide/compatibility.html).
 2. Use a matching `jextract` distribution
    * [Download one from OpenJDK](https://jdk.java.net/jextract/). 
 3. Compile the C library
@@ -44,9 +47,9 @@ Follow these instructions to build the C library, the Java program and run the J
      final class RuntimeHelper {
        // ... omitted ...
        static {
-          System.load("/Users/davidgroomes/repos/personal/jdk-playground/jextract/lucky_number.dylib");
-          SymbolLookup loaderLookup = SymbolLookup.loaderLookup();
-          SYMBOL_LOOKUP = name -> loaderLookup.lookup(name).or(() -> LINKER.defaultLookup().lookup(name));
+           System.load("/Users/dave/repos/personal/jdk-playground/jextract/lucky_number.dylib");
+           SymbolLookup loaderLookup = SymbolLookup.loaderLookup();
+           SYMBOL_LOOKUP = name -> loaderLookup.find(name).or(() -> LINKER.defaultLookup().find(name));
        }
        // ... omitted ...
      }
@@ -58,6 +61,7 @@ Follow these instructions to build the C library, the Java program and run the J
      ./gradlew installDist
      ```
 6. Run the Java program
+   * Make sure you are using Java 21.
    * ```shell
      build/install/jextract/bin/jextract
      ```
