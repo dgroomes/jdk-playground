@@ -40,13 +40,6 @@ Use [`jlink`](https://openjdk.java.net/jeps/282) on a fully-modularized Java Gra
 See the README in [jlink-modular/](jlink-modular/).
 
 
-### `jextract/`
-
-Call from Java code into C code using the `jextract` tool.
-
-See the README in [jextract/](jextract/).
-
-
 ### `single-file-source/`
 
 This subproject explores Java's support for single-file source-code programs introduced in Java 11 via [JEP 330](https://openjdk.java.net/jeps/330).
