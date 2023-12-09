@@ -31,7 +31,7 @@ class and does not explore JDK tooling. But, I didn't want to create yet another
 
 Follow these instructions to build and run the program.
 
-1. Use Java 17
+1. Use Java 21
 2. Build the program distribution:
    * ```shell
      ./gradlew installDist
