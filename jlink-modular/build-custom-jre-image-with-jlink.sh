@@ -26,7 +26,7 @@ echo "Building a custom JRE image..."
 jlink \
   --no-header-files \
   --no-man-pages \
-  --compress=2 \
+  --compress=zip-6 \
   --strip-debug \
   --module-path "$DISTRIBUTION/lib" \
   --add-modules dgroomes \
