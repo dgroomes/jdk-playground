@@ -28,7 +28,7 @@ echo "Building a custom JRE image with modules: $MODULES"
 jlink \
   --no-header-files \
   --no-man-pages \
-  --compress=2 \
+  --compress=zip-6 \
   --strip-debug \
   --add-modules "$MODULES" \
   --output $CUSTOM_JRE

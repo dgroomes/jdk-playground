@@ -53,7 +53,7 @@ for example, that depends on calls to `java.desktop`, then the program will fail
 
 Follow these instructions to build and run the program the **boring way, without `jlink`**:
 
-1. Use Java 17
+1. Use Java 21
 2. Run the tests:
    * ```shell
      ./gradlew test
@@ -64,10 +64,10 @@ Follow these instructions to build and run the program the **boring way, without
      ```
    * The output will be something like:
      ```text
-     12:35:14.281 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/.sdkman/candidates/java/17.0.7-tem
-     12:35:14.355 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     12:35:14.638 [main] INFO dgroomes.App - Found 1920 classes in the Java standard library on the classpath in PT0.282457S
-     12:35:14.638 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
+     12:39:25.166 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/.sdkman/candidates/java/21.0.1-tem
+     12:39:25.253 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     12:39:25.540 [main] INFO dgroomes.App - Found 1970 classes in the Java standard library on the classpath in PT0.286152S
+     12:39:25.540 [main] INFO dgroomes.App - For example, found 'class java.applet.Applet' and 'class java.applet.Applet$AccessibleApplet'
      ```
 
 Follow these instructions to build a custom reduced-size JRE **with `jlink`** and run the program:
@@ -86,10 +86,10 @@ Follow these instructions to build a custom reduced-size JRE **with `jlink`** an
      ```
    * The output will be something like:
      ```text
-     12:46:12.944 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/repos/personal/jdk-playground/jlink-non-modular/build/custom-jre-image
-     12:46:13.015 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
-     12:46:13.192 [main] INFO dgroomes.App - Found 1256 classes in the Java standard library on the classpath in PT0.177128S
-     12:46:13.193 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
+     12:40:03.004 [main] INFO dgroomes.App - This program is running using java.home=/Users/dave/repos/personal/jdk-playground/jlink-non-modular/build/custom-jre-image
+     12:40:03.078 [main] INFO dgroomes.App - Serialized message: {"message":"Hello world!"}
+     12:40:03.287 [main] INFO dgroomes.App - Found 1306 classes in the Java standard library on the classpath in PT0.207591S
+     12:40:03.287 [main] INFO dgroomes.App - For example, found 'class java.io.BufferedInputStream' and 'class java.io.BufferedOutputStream'
      ```
      Notice how there are hundreds fewer classes than before! The execution time was a bit faster too. A more extensive
      test must be done if you're interested in performance improvements.
