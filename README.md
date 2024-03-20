@@ -58,14 +58,8 @@ See the README in [process/](process/).
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] ABANDON (Java doesn't offer an API for reading heap dumps. You have to reach for third party tools. That's fine but that makes the cost too high for me right now.) Implement a `heap-dump/` subproject. Maybe use VisualVM or maybe just do something headless by reading a heap dump
-  from within a Java program and just summarizing the top-level data like instance count. Mainly, I want to learn the
-  components of a heap dump and not so much about actual performance analysis.
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
-* [x] DONE Do something with foreign memory using the [Foreign Function & Memory API](https://openjdk.org/jeps/442). Can I
-  write a segment of string data to memory and then read it back out? While this is a contrived example, I want to make
-  sense of the API and just generally get better at understanding how software interacts with memory (in diverse ways).
 
 
 ## Finished Wish List Items
@@ -77,6 +71,12 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE June 2023 Dependency upgrades. Gradle, Java etc.
 * [x] DONE Convert projects to use Gradle version catalog + TOML
 * [x] DONE Add a `jextract` subproject. It should call a C function from Java.
+* [ ] ABANDON (Java doesn't offer an API for reading heap dumps. You have to reach for third party tools. That's fine but that makes the cost too high for me right now.) Implement a `heap-dump/` subproject. Maybe use VisualVM or maybe just do something headless by reading a heap dump
+  from within a Java program and just summarizing the top-level data like instance count. Mainly, I want to learn the
+  components of a heap dump and not so much about actual performance analysis.
+* [x] DONE Do something with foreign memory using the [Foreign Function & Memory API](https://openjdk.org/jeps/442). Can I
+  write a segment of string data to memory and then read it back out? While this is a contrived example, I want to make
+  sense of the API and just generally get better at understanding how software interacts with memory (in diverse ways).
 
 
 ## Reference
