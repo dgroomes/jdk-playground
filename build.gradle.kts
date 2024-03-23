@@ -53,6 +53,7 @@ The same is true for the 'annotation-processor' subproject.
 project("annotation-processor") {
 
     apply(plugin = "java")
+    apply(plugin = "application")
 
     java {
         toolchain {
@@ -63,7 +64,7 @@ project("annotation-processor") {
     sourceSets {
         main {
             java {
-                setSrcDirs(listOf("src"))
+                setSrcDirs(listOf("src", "srcAnnotationProcessor"))
             }
         }
     }

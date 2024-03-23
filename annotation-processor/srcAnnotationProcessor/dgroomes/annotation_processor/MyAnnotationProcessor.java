@@ -1,4 +1,4 @@
-package dgroomes;
+package dgroomes.annotation_processor;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
