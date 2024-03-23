@@ -7,12 +7,13 @@ An annotation processor that prints basic information about classes as they are 
 
 The Java compiler can be extended with custom "annotation processors" that can be used to do things like generate code.
 This is most commonly used in frameworks that generate cross-cutting code like caching, transaction management or by tools
-like Lombok that generate boilerplate code.
+like Lombok that generate boilerplate code like getters and setters.
 
 I'd love to learn the Java annotation processing API so that I can finally grok annotation processors using a real,
-runnable example project. Interestingly, you can write an annotation processor that doesn't actually care about
-annotations. That's what this project does. It creates a "no-op" annotation processor that just prints out information
-about a class like its class name and method names.
+runnable example project. Interestingly, you can write an annotation processor that doesn't actually key off of
+annotations. This is known as a "universal" annotation processor. This project implements a universal annotation processor
+called "InformationalAnnotationProcessor" that just prints out information about a class like its class name, fields,
+and methods.
 
 ---
 **NOTE**:
@@ -30,12 +31,12 @@ Follow these instructions to build and run the project.
 2. Compile the annotation processor
    * ```shell
      javac -d out/annotation_processor \
-       srcAnnotationProcessor/dgroomes/annotation_processor/MyAnnotationProcessor.java
+       srcAnnotationProcessor/dgroomes/annotation_processor/InformationalAnnotationProcessor.java
      ```
 3. Compile the example program and use the annotation processor
    * ```shell
      javac -d out/time_zone_lister \
-       -processor dgroomes.annotation_processor.MyAnnotationProcessor \
+       -processor dgroomes.annotation_processor.InformationalAnnotationProcessor \
        -processorpath out/annotation_processor \
        src/dgroomes/time_zone_lister/*
      ```
@@ -78,7 +79,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Use an actual sample program to be the subject of the annotation processor. It's a bit odd to have the annotation
   processor its own subject.
 * [ ] SKIP (no, the direct view of the options is best for learning; plus argument files can't have comments) Consider putting the compiler args in a `javac` command file. Maybe, maybe not.
-* [ ] Print fields and types, method params, etc. 
+* [x] DONE Print fields and types, method params, etc. 
 * [x] DONE (Yes, it works! It just reports all errors at the end) Will the annotation processor work on files that may be syntactically correct but don't compile because of missing
   referenced classes? I know `javac` reports on errors and can continue, so I think this will work.
    * Note: Interestingly local classes, like those inside method bodies are not visited by the annotation processor. Local

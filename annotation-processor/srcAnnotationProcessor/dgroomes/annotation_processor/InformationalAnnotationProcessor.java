@@ -17,7 +17,7 @@ import static java.lang.System.out;
  */
 @SupportedAnnotationTypes("*")
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
-public class MyAnnotationProcessor extends AbstractProcessor {
+public class InformationalAnnotationProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
@@ -28,6 +28,8 @@ public class MyAnnotationProcessor extends AbstractProcessor {
             out.printf("[kind=%s]: %s%n", elem.getKind(), elem);
             elem.getEnclosedElements().reversed().forEach(stack::push);
         }
-        return true;
+
+        // Don't claim the element. "Universal" annotation processors don't claim any elements.
+        return false;
     }
 }
