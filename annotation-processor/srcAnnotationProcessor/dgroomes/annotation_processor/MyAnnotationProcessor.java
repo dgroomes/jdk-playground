@@ -26,7 +26,7 @@ public class MyAnnotationProcessor extends AbstractProcessor {
         while (!stack.isEmpty()) {
             var elem = stack.pop();
             out.printf("[kind=%s]: %s%n", elem.getKind(), elem);
-            elem.getEnclosedElements().forEach(stack::push);
+            elem.getEnclosedElements().reversed().forEach(stack::push);
         }
         return true;
     }

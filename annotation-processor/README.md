@@ -43,11 +43,11 @@ Follow these instructions to build and run the project.
      ```text
      Processing [errorRaised=false, rootElements=[dgroomes.time_zone_lister.TimeZoneLister, dgroomes.time_zone_lister.TimeZoneUtil], processingOver=false]
      [kind=CLASS]: dgroomes.time_zone_lister.TimeZoneLister
-     [kind=METHOD]: main(java.lang.String[])
      [kind=CONSTRUCTOR]: TimeZoneLister()
+     [kind=METHOD]: main(java.lang.String[])
      [kind=CLASS]: dgroomes.time_zone_lister.TimeZoneUtil
-     [kind=METHOD]: findTimeZones()
      [kind=CONSTRUCTOR]: TimeZoneUtil()
+     [kind=METHOD]: findTimeZones()
      Processing [errorRaised=false, rootElements=[], processingOver=true]
 
      ```
