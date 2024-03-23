@@ -54,12 +54,24 @@ Executing and managing operating system processes from a Java program.
 See the README in [process/](process/).
 
 
+### `annotation-processor/`
+
+An annotation processor that prints basic information about classes as they are visited during the compilation process.
+
+See the README in [annotation-processor/](annotation-processor/).
+
+
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
+* [ ] Create a Java compiler plugin. For example, see the [SemanticDB javac plugin](https://github.com/scalameta/scalameta/blob/613218fce915f10074ed72733c44d7b8cc2432fe/semanticdb/semanticdb3/guide.md?plain=1#L380). 
+* [x] DONE Create an annotation processor. This is a lighter weight alternative to a compiler plugin, and should be pretty
+  easy.
+* [ ] Will the annotation process work on files that may be syntactically correct but don't compile because of missing
+  referenced classes? I know `javac` reports on errors and can continue, so I think this will work.
 
 
 ## Finished Wish List Items

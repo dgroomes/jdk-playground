@@ -46,3 +46,26 @@ project("single-file-source") {
         mainClass.set("Main")
     }
 }
+
+/*
+The same is true for the 'annotation-processor' subproject.
+*/
+project("annotation-processor") {
+
+    apply(plugin = "java")
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(21))
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                setSrcDirs(listOf("src"))
+            }
+        }
+    }
+}
+
