@@ -67,7 +67,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [ ] Manage multiple processes in `process/`
 * [ ] Find existing processes and terminate them in `process/`
-* [ ] Create a Java compiler plugin. For example, see the [SemanticDB javac plugin](https://github.com/scalameta/scalameta/blob/613218fce915f10074ed72733c44d7b8cc2432fe/semanticdb/semanticdb3/guide.md?plain=1#L380). 
+* [ ] IN PROGRESS Create a Java compiler plugin. For example, see the [SemanticDB javac plugin](https://github.com/scalameta/scalameta/blob/613218fce915f10074ed72733c44d7b8cc2432fe/semanticdb/semanticdb3/guide.md?plain=1#L380). 
 * [x] DONE Create an annotation processor. This is a lighter weight alternative to a compiler plugin, and should be pretty
   easy.
 

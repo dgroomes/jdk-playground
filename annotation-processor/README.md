@@ -6,8 +6,8 @@ An annotation processor that prints basic information about classes as they are 
 ## Overview
 
 The Java compiler can be extended with custom "annotation processors" that can be used to do things like generate code.
-This is most commonly used in frameworks that generate cross-cutting code like caching, transaction management or by tools
-like Lombok that generate boilerplate code like getters and setters.
+Annotation processors are most famously used in frameworks that generate cross-cutting code like caching, transaction
+management or by tools like Lombok that generate boilerplate code like getters and setters.
 
 I'd love to learn the Java annotation processing API so that I can finally grok annotation processors using a real,
 runnable example project. Interestingly, you can write an annotation processor that doesn't actually key off of
