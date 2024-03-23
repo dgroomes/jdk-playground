@@ -41,10 +41,15 @@ Follow these instructions to build and run the project.
      ```
    * The output should be something like:
      ```text
-     Found class: TimeZoneLister
-         Found method: main
-     Found class: TimeZoneUtil
-         Found method: findTimeZones
+     Processing [errorRaised=false, rootElements=[dgroomes.time_zone_lister.TimeZoneLister, dgroomes.time_zone_lister.TimeZoneUtil], processingOver=false]
+     [kind=CLASS]: dgroomes.time_zone_lister.TimeZoneLister
+     [kind=METHOD]: main(java.lang.String[])
+     [kind=CONSTRUCTOR]: TimeZoneLister()
+     [kind=CLASS]: dgroomes.time_zone_lister.TimeZoneUtil
+     [kind=METHOD]: findTimeZones()
+     [kind=CONSTRUCTOR]: TimeZoneUtil()
+     Processing [errorRaised=false, rootElements=[], processingOver=true]
+
      ```
 4. If you'd like, run the example program
    * Note: the annotation processor didn't actually have any effect on the example program, but you can run it if you'd
@@ -74,8 +79,11 @@ General clean-ups, TODOs and things I wish to implement for this project:
   processor its own subject.
 * [ ] SKIP (no, the direct view of the options is best for learning; plus argument files can't have comments) Consider putting the compiler args in a `javac` command file. Maybe, maybe not.
 * [ ] Print fields and types, method params, etc. 
-* [ ] IN PROGRESS Will the annotation process work on files that may be syntactically correct but don't compile because of missing
+* [x] DONE (Yes, it works! It just reports all errors at the end) Will the annotation processor work on files that may be syntactically correct but don't compile because of missing
   referenced classes? I know `javac` reports on errors and can continue, so I think this will work.
+   * Note: Interestingly local classes, like those inside method bodies are not visited by the annotation processor. Local
+     classes are quite a new feature of Java and are rarely seen, but still, this means that this solution isn't quite 
+     all the way what I'm looking for, but close enough for now. I would need to use a compiler plugin.
 
 
 ## Reference

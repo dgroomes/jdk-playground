@@ -6,8 +6,8 @@ import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
-import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.TypeElement;
+import java.util.ArrayDeque;
 import java.util.Set;
 
 import static java.lang.System.out;
@@ -21,15 +21,12 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        for (Element elem : roundEnv.getRootElements()) {
-            if (elem.getKind() == ElementKind.CLASS) {
-                out.printf("Found class: %s%n", elem.getSimpleName());
-                for (Element enclosed : elem.getEnclosedElements()) {
-                    if (enclosed.getKind() == ElementKind.METHOD) {
-                        out.printf("    Found method: %s%n", enclosed.getSimpleName());
-                    }
-                }
-            }
+        out.printf("Processing %s%n", roundEnv);
+        var stack = new ArrayDeque<Element>(roundEnv.getRootElements());
+        while (!stack.isEmpty()) {
+            var elem = stack.pop();
+            out.printf("[kind=%s]: %s%n", elem.getKind(), elem);
+            elem.getEnclosedElements().forEach(stack::push);
         }
         return true;
     }
