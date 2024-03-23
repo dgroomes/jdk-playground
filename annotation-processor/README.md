@@ -37,12 +37,13 @@ Follow these instructions to build and run the project.
      javac -d out/time_zone_lister \
        -processor dgroomes.annotation_processor.MyAnnotationProcessor \
        -processorpath out/annotation_processor \
-       src/dgroomes/time_zone_lister/TimeZoneLister.java
+       src/dgroomes/time_zone_lister/*
      ```
    * The output should be something like:
      ```text
      Found class: TimeZoneLister
          Found method: main
+     Found class: TimeZoneUtil
          Found method: findTimeZones
      ```
 4. If you'd like, run the example program
@@ -73,6 +74,8 @@ General clean-ups, TODOs and things I wish to implement for this project:
   processor its own subject.
 * [ ] SKIP (no, the direct view of the options is best for learning; plus argument files can't have comments) Consider putting the compiler args in a `javac` command file. Maybe, maybe not.
 * [ ] Print fields and types, method params, etc. 
+* [ ] IN PROGRESS Will the annotation process work on files that may be syntactically correct but don't compile because of missing
+  referenced classes? I know `javac` reports on errors and can continue, so I think this will work.
 
 
 ## Reference

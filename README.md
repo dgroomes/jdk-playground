@@ -70,8 +70,6 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [ ] Create a Java compiler plugin. For example, see the [SemanticDB javac plugin](https://github.com/scalameta/scalameta/blob/613218fce915f10074ed72733c44d7b8cc2432fe/semanticdb/semanticdb3/guide.md?plain=1#L380). 
 * [x] DONE Create an annotation processor. This is a lighter weight alternative to a compiler plugin, and should be pretty
   easy.
-* [ ] Will the annotation process work on files that may be syntactically correct but don't compile because of missing
-  referenced classes? I know `javac` reports on errors and can continue, so I think this will work.
 
 
 ## Finished Wish List Items
