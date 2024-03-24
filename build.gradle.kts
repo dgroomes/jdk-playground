@@ -70,3 +70,26 @@ project("annotation-processor") {
     }
 }
 
+/*
+The same is true for the 'compiler-plugin' subproject.
+*/
+project("compiler-plugin") {
+
+    apply(plugin = "java")
+    apply(plugin = "application")
+
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(21))
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                setSrcDirs(listOf("src", "srcCompilerPlugin"))
+            }
+        }
+    }
+}
+

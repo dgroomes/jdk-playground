@@ -61,6 +61,13 @@ An annotation processor that prints basic information about classes as they are 
 See the README in [annotation-processor/](annotation-processor/).
 
 
+### `compiler-plugin/`
+
+A compiler plugin that implements a naive check for integer overflow.
+
+See the README in [compiler-plugin/](compiler-plugin/).
+
+
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:

@@ -1,7 +1,5 @@
 # compiler-plugin
 
-NOT YET FULLY IMPLEMENTED
-
 A compiler plugin that implements a naive check for integer overflow.
 
 
@@ -48,13 +46,13 @@ Follow these instructions to build and run the project.
 3. Compile the example program and use the compiler plugin
    * ```shell
      javac -d out/simple_arithmetic \
-       -processor dgroomes.compiler_plugin.OverflowDetector \
-       -processorpath out/compiler_plugin \
-       src/dgroomes/simple_arithmetic/*
+       -cp out/compiler_plugin:resourcesCompilerPlugin \
+       -Xplugin:OverflowDetectorPlugin \
+       src/dgroomes/simple_arithmetic/SimpleArithmetic.java
      ```
    * The output should be something like:
      ```text
-     TODO
+     Integer overflow detected at 1463
      ```
 
 
@@ -63,7 +61,10 @@ Follow these instructions to build and run the project.
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Scaffold the project
-* [ ] Implement. (Use GPT-4)
+* [x] DONE Implement. (Use GPT-4)
+* [ ] Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
+  there is a "processor" classpath and the service loader framework is involved.
+* [ ] Print the line number and source file name instead of whatever number is being printed now.
 
 
 ## Reference
