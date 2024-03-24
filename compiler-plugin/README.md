@@ -5,11 +5,12 @@ A compiler plugin that implements a naive check for integer overflow.
 
 ## Overview
 
-The Java compiler can be extended with [custom plugins](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.compiler/com/sun/source/util/Plugin.html)
-that hook into the compilation process of `javac`. Compiler plugins are used by static analysis tools like [Deptective](https://github.com/moditect/deptective).
+The Java compiler (`javac`) can be extended with [custom plugins](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.compiler/com/sun/source/util/Plugin.html)
+that hook into the compilation process. Compiler plugins are used by static analysis tools like [Deptective](https://github.com/moditect/deptective)
+and many others.
 
 The Java compiler plugin API was introduced relatively late in Java's history, in Java 8, and so I think many static
-analysis tools that pre-date the API are using some other mechanism to parse and analyze Java source code. I'm
+analysis tools that predate the API are using some other mechanism to parse and analyze Java source code. I'm
 interested to know the range of techniques used by static analysis tools in the Java ecosystem:
 
 * How does [SpotBugs](https://github.com/spotbugs/spotbugs) parse Java code?
