@@ -85,9 +85,18 @@ project("compiler-plugin") {
     }
 
     sourceSets {
-        main {
+        create("example-program") {
             java {
-                setSrcDirs(listOf("src", "srcCompilerPlugin"))
+                setSrcDirs(listOf("example-program/src"))
+            }
+        }
+
+        create("compiler-plugin") {
+            java {
+                setSrcDirs(listOf("compiler-plugin/src"))
+            }
+            resources {
+                setSrcDirs(listOf("compiler-plugin/resources"))
             }
         }
     }

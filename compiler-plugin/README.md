@@ -40,15 +40,15 @@ Follow these instructions to build and run the project.
 1. Pre-requisites: Java 21
 2. Compile the plugin
    * ```shell
-     javac -d out/compiler_plugin \
-       srcCompilerPlugin/dgroomes/compiler_plugin/OverflowDetectorPlugin.java
+     javac -d out/compiler-plugin \
+       compiler-plugin/src/dgroomes/compiler_plugin/OverflowDetectorPlugin.java
      ```
 3. Compile the example program and use the compiler plugin
    * ```shell
-     javac -d out/simple_arithmetic \
-       -cp out/compiler_plugin:resourcesCompilerPlugin \
+     javac -d out/example-program \
+       -cp out/compiler-plugin:compiler-plugin/resources \
        -Xplugin:OverflowDetectorPlugin \
-       src/dgroomes/simple_arithmetic/SimpleArithmetic.java
+       example-program/src/dgroomes/simple_arithmetic/SimpleArithmetic.java
      ```
    * The output should be something like:
      ```text
@@ -62,7 +62,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Scaffold the project
 * [x] DONE Implement. (Use GPT-4)
-* [ ] Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
+* [ ] IN PROGRESS Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
   there is a "processor" classpath and the service loader framework is involved.
 * [ ] Print the line number and source file name instead of whatever number is being printed now.
 
