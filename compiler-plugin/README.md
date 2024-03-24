@@ -52,7 +52,7 @@ Follow these instructions to build and run the project.
      ```
    * The output should be something like:
      ```text
-     Integer overflow detected at 1463
+     Integer overflow detected in file 'example-program/src/dgroomes/simple_arithmetic/SimpleArithmetic.java' at line 56 for expression 2147483647 + 1
      ```
 
 
@@ -64,7 +64,10 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Implement. (Use GPT-4)
 * [x] DONE Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
   there is a "processor" classpath and the service loader framework is involved.
-* [ ] Print the line number and source file name instead of whatever number is being printed now.
+* [x] DONE Print the line number and source file name instead of whatever number is being printed now.
+* [ ] How can I attach a debugger to the `javac` process? This might go beyond the scope of the subproject. I'm partially
+  interested in calling the Java compiler from the "Tools Provider" too and in that case I would definitely want to attach
+  the debugger.
 
 
 ## Reference

@@ -1,9 +1,9 @@
 package dgroomes.compiler_plugin;
 
-import com.sun.source.tree.BinaryTree;
-import com.sun.source.tree.ExpressionTree;
-import com.sun.source.tree.Tree;
+import com.sun.source.tree.*;
 import com.sun.source.util.*;
+
+import static java.lang.System.err;
 
 /**
  * Please see the README for more information.
@@ -37,16 +37,23 @@ class Scanner extends TreePathScanner<Void, Trees> {
             ExpressionTree right = node.getRightOperand();
 
             if (left.getKind() == Tree.Kind.INT_LITERAL && right.getKind() == Tree.Kind.INT_LITERAL) {
-                try {
-                    int leftValue = Integer.parseInt(left.toString());
-                    int rightValue = Integer.parseInt(right.toString());
+                int leftValue = Integer.parseInt(left.toString());
+                int rightValue = Integer.parseInt(right.toString());
 
-                    // Check for integer overflow
-                    if (Integer.MAX_VALUE - rightValue < leftValue) {
-                        System.err.println("Integer overflow detected at " + trees.getSourcePositions().getStartPosition(
-                                getCurrentPath().getCompilationUnit(), node));
+                if (Integer.MAX_VALUE - rightValue < leftValue) {
+
+                    long lineNumber;
+                    String fileName;
+                    {
+                        SourcePositions sourcePositions = trees.getSourcePositions();
+                        CompilationUnitTree compilationUnit = getCurrentPath().getCompilationUnit();
+                        LineMap lineMap = compilationUnit.getLineMap();
+                        long startPosition = sourcePositions.getStartPosition(compilationUnit, node);
+                        lineNumber = lineMap.getLineNumber(startPosition);
+                        fileName = compilationUnit.getSourceFile().getName();
                     }
-                } catch (NumberFormatException ignored) {
+
+                    err.printf("Integer overflow detected in file '%s' at line %d for expression %s%n", fileName, lineNumber, node);
                 }
             }
         }
