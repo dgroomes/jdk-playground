@@ -46,8 +46,8 @@ Follow these instructions to build and run the project.
 3. Compile the example program and use the compiler plugin
    * ```shell
      javac -d out/example-program \
-       -cp out/compiler-plugin:compiler-plugin/resources \
-       -Xplugin:OverflowDetectorPlugin \
+       --processor-path out/compiler-plugin:compiler-plugin/resources \
+       -Xplugin:OverflowDetector \
        example-program/src/dgroomes/simple_arithmetic/SimpleArithmetic.java
      ```
    * The output should be something like:
@@ -62,7 +62,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Scaffold the project
 * [x] DONE Implement. (Use GPT-4)
-* [ ] IN PROGRESS Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
+* [x] DONE Fix up javac options. I always get so turned around with the classpath, and now doubly so because with a plugin
   there is a "processor" classpath and the service loader framework is involved.
 * [ ] Print the line number and source file name instead of whatever number is being printed now.
 

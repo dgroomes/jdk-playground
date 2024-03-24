@@ -12,7 +12,7 @@ public class OverflowDetectorPlugin implements Plugin {
 
     @Override
     public String getName() {
-        return "OverflowDetectorPlugin";
+        return "OverflowDetector";
     }
 
     @Override
@@ -21,37 +21,37 @@ public class OverflowDetectorPlugin implements Plugin {
             @Override
             public void finished(TaskEvent e) {
                 if (e.getKind() == TaskEvent.Kind.ANALYZE) {
-                    new OverflowDetectorInner().scan(e.getCompilationUnit(), Trees.instance(task));
+                    new Scanner().scan(e.getCompilationUnit(), Trees.instance(task));
                 }
             }
         });
     }
+}
 
-    static class OverflowDetectorInner extends TreePathScanner<Void, Trees> {
+class Scanner extends TreePathScanner<Void, Trees> {
 
-        @Override
-        public Void visitBinary(BinaryTree node, Trees trees) {
-            if (node.getKind() == Tree.Kind.PLUS) {
-                ExpressionTree left = node.getLeftOperand();
-                ExpressionTree right = node.getRightOperand();
+    @Override
+    public Void visitBinary(BinaryTree node, Trees trees) {
+        if (node.getKind() == Tree.Kind.PLUS) {
+            ExpressionTree left = node.getLeftOperand();
+            ExpressionTree right = node.getRightOperand();
 
-                if (left.getKind() == Tree.Kind.INT_LITERAL && right.getKind() == Tree.Kind.INT_LITERAL) {
-                    try {
-                        int leftValue = Integer.parseInt(left.toString());
-                        int rightValue = Integer.parseInt(right.toString());
+            if (left.getKind() == Tree.Kind.INT_LITERAL && right.getKind() == Tree.Kind.INT_LITERAL) {
+                try {
+                    int leftValue = Integer.parseInt(left.toString());
+                    int rightValue = Integer.parseInt(right.toString());
 
-                        // Check for integer overflow
-                        if (Integer.MAX_VALUE - rightValue < leftValue) {
-                            System.err.println("Integer overflow detected at " + trees.getSourcePositions().getStartPosition(
-                                    getCurrentPath().getCompilationUnit(), node));
-                        }
-                    } catch (NumberFormatException ignored) {
+                    // Check for integer overflow
+                    if (Integer.MAX_VALUE - rightValue < leftValue) {
+                        System.err.println("Integer overflow detected at " + trees.getSourcePositions().getStartPosition(
+                                getCurrentPath().getCompilationUnit(), node));
                     }
+                } catch (NumberFormatException ignored) {
                 }
             }
-
-            return super.visitBinary(node, trees);
         }
+
+        return super.visitBinary(node, trees);
     }
 }
 
